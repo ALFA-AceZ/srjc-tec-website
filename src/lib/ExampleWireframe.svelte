@@ -7,7 +7,7 @@
 				class="flex items-start justify-start gap-2.5 overflow-hidden rounded bg-gray-700 px-10 py-3"
 			>
 				<div class="justify-start font-['Inter'] text-base leading-normal font-bold text-white">
-					Logo
+					Logoewjsughsrofsjhifjhes
 				</div>
 			</div>
 			<div class="flex items-start justify-start gap-8">
