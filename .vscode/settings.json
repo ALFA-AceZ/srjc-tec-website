@@ -1,5 +1,4 @@
 {
-	"svelte.enable-ts-plugin": true,
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
@@ -18,6 +17,9 @@
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"[snippets]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
 
 	"files.associations": {
 		"*.css": "tailwindcss"
@@ -26,10 +28,33 @@
 		"editor.defaultFormatter": "bradlc.vscode-tailwindcss"
 	},
 	"tailwindCSS.experimental.configFile": "./src/app.css",
+	// duplicate of better-tailwindcss/no-conflicting-classes
+	"tailwindCSS.lint.cssConflict": "ignore",
 
-	"eslint.validate": ["javascript", "typescript"],
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	},
+	"eslint.codeAction.disableRuleComment": {
+		"enable": false
+	},
+	"eslint.validate": ["javascript", "typescript", "svelte"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
 
 	"editor.quickSuggestions": {
 		"strings": "on"
-	}
+	},
+
+	"deno.enable": false,
+
+	"emmet.extensionsPath": ["./.vscode/emmet"],
+	"emmet.includeLanguages": {
+		"svelte": "html"
+	},
+
+	"svelte.enable-ts-plugin": true,
+	"svelte.plugin.svelte.defaultScriptLanguage": "ts",
+	"svelte.plugin.css.completions.emmet": false,
+	"svelte.plugin.html.completions.emmet": false
 }
