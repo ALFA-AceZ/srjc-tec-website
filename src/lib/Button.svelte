@@ -3,25 +3,30 @@
 
 	interface Props {
 		children: Snippet;
+		// must use resolve when passing href to this component
+		// eslint svelte/no-navigation-without-resolve off
+		href: string;
 	}
 
-	let { children }: Props = $props();
+	let { children, href }: Props = $props();
 </script>
 
-<div
+<!-- @component
+usage
+```
+<Button href=resolve('/projects')>Click Me!</Button>
+```
+ -->
+<a
 	class="
-   inline-flex flex-col items-center justify-center overflow-hidden rounded-md
-   bg-button-primary p-2
-   md:overflow-hidden
-   lg:overflow-hidden
+   inline-block self-center rounded border border-button-secondary
+   bg-button-primary px-5 py-2.5 font-medium whitespace-nowrap text-button-label
+   shadow-sm transition-colors
+   hover:bg-button-hover
+   focus:outline-2 focus:outline-offset-2 focus:outline-button-label
+   active:bg-button-hover
  "
->
-	<div
-		class="
-    justify-center font-['Inter'] text-base leading-7 font-semibold text-black
-    md:text-lg
-  "
-	>
-		{@render children()}
-	</div>
-</div>
+	{href}
+	tabindex="0">
+	{@render children()}
+</a>
