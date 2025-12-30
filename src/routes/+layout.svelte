@@ -1,20 +1,16 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import type { Snippet } from 'svelte';
-
-	interface Props {
-		children: Snippet;
-	}
-
-	let { children }: Props = $props();
+	import type { LayoutProps } from './$types';
+	import { ModeWatcher } from "mode-watcher";
+	let { children }: LayoutProps = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Home | TEC</title>
 </svelte:head>
 
+<ModeWatcher />
 {@render children?.()}
 
 <style lang="postcss">
